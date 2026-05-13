@@ -103,7 +103,7 @@
         autoplay
         interaction-prompt="none"
         camera-orbit="180deg 75deg 120%" 
-        camera-target="0m 0.15m 0m"
+        camera-target="0m 0.22m 0m"
         min-camera-orbit="auto auto 40%" 
         max-camera-orbit="auto auto 600%"
         loading="eager">
@@ -113,13 +113,13 @@
         const getEl = (id) => document.getElementById(id);
         const mv = getEl('clock-model');
 
-        // Reset
+        // Reset widoku
         getEl('reset-view').onclick = () => {
             mv.cameraOrbit = "180deg 75deg 120%";
-            mv.cameraTarget = "0m 0.15m 0m";
+            mv.cameraTarget = "0m 0.22m 0m";
         };
 
-        // Panele
+        // Panele boczne
         getEl('toggle-svrn').onclick = () => {
             getEl('panel-czasowniki').classList.remove('visible');
             getEl('panel-svrn').classList.toggle('visible');
@@ -136,30 +136,9 @@
             mv.exposure = isDark ? "1.6" : "2.8";
         };
 
-        // Pause
+        // Play / Pause
         getEl('pause-toggle').onclick = () => {
             if (mv.paused) {
                 mv.play();
                 getEl('icon-pause').style.display = 'block';
-                getEl('icon-play').style.display = 'none';
-            } else {
-                mv.pause();
-                getEl('icon-pause').style.display = 'none';
-                getEl('icon-play').style.display = 'block';
-            }
-        };
-
-        // AR/Fullscreen
-        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-            getEl('ar-label').style.display = 'flex';
-            getEl('action-toggle').onclick = () => mv.activateAR();
-        } else {
-            getEl('fs-icon').style.display = 'block';
-            getEl('action-toggle').onclick = () => {
-                if (!document.fullscreenElement) document.documentElement.requestFullscreen();
-                else document.exitFullscreen();
-            };
-        }
-    </script>
-</body>
-</html>
+                getEl('icon-play').style.display = '
