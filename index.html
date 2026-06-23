@@ -65,7 +65,7 @@
             transform: translateY(-5px);
         }
         .info-panel.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
-        #panel-ppls { left: 32px; }
+        #panel-svrn { left: 32px; }
         #panel-czasowniki { right: 32px; text-align: right; max-width: 320px; }
 
         .icon-btn { width: 28px; height: 28px; bottom: 40px; display: flex; align-items: center; justify-content: center; }
@@ -94,10 +94,26 @@
 </head>
 <body>
 
-    <button class="ui-element brand-btn brand-label" id="toggle-ppls">PPLS</button>
-    <div id="panel-ppls" class="info-panel">
+    <button class="ui-element brand-btn brand-label" id="toggle-svrn">SVRN</button>
+    <div id="panel-svrn" class="info-panel">
         Mechanizm kwarcowy<br>Wymiary obiektu<br>Druk 3D PLA
     </div>
 
     <button class="ui-element brand-btn brand-czasowniki" id="toggle-czasowniki">CZASOWNIKI</button>
-    <div id="panel-
+    <div id="panel-czasowniki" class="info-panel">
+        Obiekty kinetyczne badające granicę<br>
+        między precyzyjną inżynierią,<br>
+        a wizualnym absurdem.
+    </div>
+
+    <button class="ui-element icon-btn btn-theme" id="theme-toggle">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18V4c4.42 0 8 3.58 8 8s-3.58 8-8 8z"/></svg>
+    </button>
+
+    <button class="ui-element icon-btn btn-pause" id="pause-toggle">
+        <svg id="icon-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        <svg id="icon-play" viewBox="0 0 24 24" style="display:none;"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+
+    <button class="ui-element icon-btn btn-action" id="action-toggle">
+        <span id="ar-label" style="display:none;">AR</span>
